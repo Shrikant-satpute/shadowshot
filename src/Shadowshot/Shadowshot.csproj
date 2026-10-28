@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <UseWindowsForms>true</UseWindowsForms>
+    <AssemblyName>Shadowshot</AssemblyName>
+    <RootNamespace>Shadowshot</RootNamespace>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+    <ApplicationIcon>Assets\shadowshot.ico</ApplicationIcon>
+    <AssemblyTitle>Shadowshot</AssemblyTitle>
+    <Description>Shadowshot screenshot and annotation tool</Description>
+  </PropertyGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Assets\shadowshot.ico" LogicalName="Shadowshot.ico" />
+    <InternalsVisibleTo Include="Shadowshot.Tests" />
+  </ItemGroup>
+</Project>

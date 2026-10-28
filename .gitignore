@@ -1,0 +1,12 @@
+# Build output
+bin/
+obj/
+dist/
+.vs/
+*.user
+
+# Website / promo tooling
+node_modules/
+.vercel/
+promo/out/
+promo/public/generated/

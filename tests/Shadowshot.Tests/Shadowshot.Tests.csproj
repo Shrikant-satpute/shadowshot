@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <UseWindowsForms>true</UseWindowsForms>
+    <AssemblyName>Shadowshot.Tests</AssemblyName>
+    <RootNamespace>Shadowshot.Tests</RootNamespace>
+    <ApplicationManifest>..\..\src\Shadowshot\app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\Shadowshot\Shadowshot.csproj" />
+  </ItemGroup>
+</Project>

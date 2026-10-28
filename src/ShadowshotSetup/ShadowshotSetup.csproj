@@ -1,0 +1,22 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <UseWindowsForms>true</UseWindowsForms>
+    <AssemblyName>ShadowshotSetup</AssemblyName>
+    <RootNamespace>ShadowshotSetup</RootNamespace>
+    <ApplicationManifest>setup.manifest</ApplicationManifest>
+    <ApplicationIcon>..\Shadowshot\Assets\shadowshot.ico</ApplicationIcon>
+    <AssemblyTitle>Shadowshot Setup</AssemblyTitle>
+    <Product>Shadowshot Setup</Product>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Shadowshot\Shadowshot.csproj" ReferenceOutputAssembly="false" Private="false" OutputItemType="ShadowshotAppExe" />
+  </ItemGroup>
+  <!-- Embed the freshly built app exe as the install payload. -->
+  <Target Name="EmbedShadowshotApp" AfterTargets="ResolveProjectReferences" BeforeTargets="PrepareResources">
+    <Error Condition="'@(ShadowshotAppExe)' == ''" Text="Shadowshot.exe was not produced by the App project." />
+    <ItemGroup>
+      <EmbeddedResource Include="@(ShadowshotAppExe)" LogicalName="Payload.Shadowshot.exe" Type="Non-Resx" WithCulture="false" />
+    </ItemGroup>
+  </Target>
+</Project>
